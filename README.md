@@ -7,7 +7,7 @@ heapsort.c contains the native C implementation of heapsort (C newbie, so it's p
 
 ## Results
 
-As you can see below, there are performance improvements but it is not incredibly drastic. I think part of this is because I am using emscripten to compile the C and not directly calling the compiled WASM code, but since you can only pass integers and floats to native C code, and not an array, I decided this would be the least resistent path forward. To make this even more performant I could just pass an array length to the native C code and generate the array natively inside C instead of in JS, and directly call the compiled WASM code.
+As you can see below, there are performance improvements but it is not too drastic. I believe part of this is because I am copying an array back and forth using emscripten, but I believe there is a way to share a heap of memory between C and JS, but that seemed more complicated so I chose to keep it simple here and pass data back and forth. Future iterations could also generate the array inside C itself rather than passing it in, but to keep the benchmarks consistent I wanted both the C and JS implementation to sort the same numbers.
 
 # array size = 10
 
