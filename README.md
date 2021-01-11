@@ -2,8 +2,9 @@
 
 I wanted to learn how Webassembly works, as well as learn about how much performance improvements it could provide over JS when performing something CPU-bound, so I created a basic implementation of [Heapsort](https://www.geeksforgeeks.org/heap-sort/) that has runtime complexity of O(nlogn) to sort an unsorted array.
 
-heapsort.js contains the JS implementation of heapsort.
-heapsort.c contains the native C implementation of heapsort (C newbie, so it's probably not great :))
+**heapsort.js** contains the JS implementation of heapsort.
+
+**heapsort.c** contains the native C implementation of heapsort (C newbie, so it's probably not great :))
 
 ## Results
 
