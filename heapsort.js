@@ -36,7 +36,7 @@ const heapSort = (array) => {
 }
 
 
-const array_length = process.argv[2];
+const array_length = parseInt(process.argv[2]);
 
 const array = Array.from({length: array_length}, () => Math.floor(Math.random() * 100));
 const uint8_array = new Uint8Array(array);
@@ -47,11 +47,9 @@ console.timeEnd('Heapsort (Pure JS, size = ' + array_length + ')');
 
 const factory = require('./heapsort.out.js');
 
-console.time('Heapsort (WebAssembly, size = ' + array_length + ')');
-
 factory().then((instance) => {
+    console.time('Heapsort (WebAssembly, size = ' + array_length + ')');
     const result = instance.ccall("heap_sort", 'number', ['array', 'number'], [uint8_array, array_length]);
     const js_array = instance.HEAPU8.subarray(result, result + array_length);
     console.timeEnd('Heapsort (WebAssembly, size = ' + array_length + ')');
 });
-  
