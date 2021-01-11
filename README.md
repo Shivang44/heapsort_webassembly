@@ -7,7 +7,7 @@ heapsort.c contains the native C implementation of heapsort (C newbie, so it's p
 
 ## Results
 
-As you can see below, there are performance improvements but it is not too drastic. I believe part of this is because I am copying an array back and forth using [emscripten](https://emscripten.org/docs/porting/connecting_cpp_and_javascript/Interacting-with-code.html), but I believe there is a way to share a heap of memory between C and JS, but that seemed more complicated so I chose to keep it simple here and pass data back and forth. Future iterations could also generate the array inside C itself rather than passing it in, but to keep the benchmarks consistent I wanted both the C and JS implementation to sort the same numbers.
+As you can see below, there are performance improvements but it is not too drastic. I believe part of this is because I am copying an array back and forth using [emscripten](https://emscripten.org/docs/porting/connecting_cpp_and_javascript/Interacting-with-code.html), but I believe there is a way to share a heap of memory between C and JS, but that seemed much more involved so I chose to keep it simple here and pass data back and forth. Future iterations could also generate the array inside C itself rather than passing it in, but to keep the benchmarks consistent I wanted both the C and JS implementation to sort the same numbers.
 
 # array size = 10
 
