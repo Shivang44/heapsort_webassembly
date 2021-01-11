@@ -1,0 +1,11 @@
+{
+  "name": "heapsort-webassembly",
+  "version": "1.0.0",
+  "description": "A pedagogical example of heapsort implemented in pure JS and then WASM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
