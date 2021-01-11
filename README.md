@@ -1,13 +1,13 @@
 ## Heapsort implementation in pure JS compared to WebAssembly/WASM
 
-I wanted to learn how Webassembly works, as well as learn about how much performance improvements it could provide over JS when performing something CPU-bound, so I created a basic implementation of Heapsort that has runtime complexity of O(nlogn) to sort an unsorted array.
+I wanted to learn how Webassembly works, as well as learn about how much performance improvements it could provide over JS when performing something CPU-bound, so I created a basic implementation of [Heapsort](https://www.geeksforgeeks.org/heap-sort/) that has runtime complexity of O(nlogn) to sort an unsorted array.
 
 heapsort.js contains the JS implementation of heapsort.
 heapsort.c contains the native C implementation of heapsort (C newbie, so it's probably not great :))
 
 ## Results
 
-As you can see below, there are performance improvements but it is not too drastic. I believe part of this is because I am copying an array back and forth using emscripten, but I believe there is a way to share a heap of memory between C and JS, but that seemed more complicated so I chose to keep it simple here and pass data back and forth. Future iterations could also generate the array inside C itself rather than passing it in, but to keep the benchmarks consistent I wanted both the C and JS implementation to sort the same numbers.
+As you can see below, there are performance improvements but it is not too drastic. I believe part of this is because I am copying an array back and forth using -[emscripten](https://emscripten.org/docs/porting/connecting_cpp_and_javascript/Interacting-with-code.html), but I believe there is a way to share a heap of memory between C and JS, but that seemed more complicated so I chose to keep it simple here and pass data back and forth. Future iterations could also generate the array inside C itself rather than passing it in, but to keep the benchmarks consistent I wanted both the C and JS implementation to sort the same numbers.
 
 # array size = 10
 
